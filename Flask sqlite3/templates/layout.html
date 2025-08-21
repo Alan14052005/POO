@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/styles.css") }}">
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h3>Centro de Control Horario</h3>
+    </header>
+    {% block content%}{% endblock%}
+    </Br>
+    </Br>
+    <main>
+    {% if request.endpoint != 'index' %}  <!-- Condición para evitar el botón en el index -->
+        <button><a href="{{ url_for('index') }}">Inicio</a></button>
+    {% endif %}
+    </main>
+    <footer>
+        Instituto Educativo Nuevo Orizonte
+    </footer>
+</body>
+</html>

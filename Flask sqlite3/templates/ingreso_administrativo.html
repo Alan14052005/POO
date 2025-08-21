@@ -1,0 +1,13 @@
+{%extends "layout.html" %}
+{%block title%}formulario de entrada{%endblock%}
+{% block content %}
+
+    <div class="container">
+        <div class="buttons">
+            <H1>ADMINISTRATIVO</H1>
+        <BUTton><a href = "{{ url_for('generar_informe_general') }}"> GENERAR INFORME GENERAL </a></BUTton> </Br>
+        <BUTton><a href = "{{ url_for('generar_informe_personal') }}"> GENERAR INFORME PERSONAL </a></BUTton>
+        </div>
+    </div>
+    
+{%endblock%}

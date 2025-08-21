@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}Generar Informe General{% endblock %}
+
+{% block content %}
+    <h1>Generar Informe General</h1>
+    <hr />
+    <form action="{{ request.path }}" method="post">
+        <label for="fecha_inicio">Fecha de inicio:</label>
+        <input type="date" name="fecha_inicio" required/><br />
+
+        <label for="fecha_fin">Fecha de fin:</label>
+        <input type="date" name="fecha_fin" required/><br />
+
+        <label for="funcion">Seleccione la función:</label>
+        <select name="funcion">
+            <option value="TODOS">Todos</option>
+            <option value="DO">Docente</option>
+            <option value="AD">Administrativo</option>
+            <option value="TE">Técnico</option>
+        </select><br />
+
+        <label for="dependencia">Seleccione la dependencia:</label>
+        <select name="dependencia">
+            <option value="TODAS">Todas</option>
+            <option value="D01">Edificio Central</option>
+            <option value="D02">Talleres</option>
+            <option value="D03">Centro Deportivo</option>
+        </select><br />
+
+        <input type="submit" value="Generar Informe"/>
+    </form>
+{% endblock %}

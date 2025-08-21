@@ -1,0 +1,13 @@
+{%extends "layout.html" %}
+{%block title%}Nuevo Orizonte{%endblock%}
+{% block content %}
+
+    <div class="container">
+        <div class="buttons">
+            <h1>Instituto Educativo Nuevo Orizonte</h1>
+        <BUTton><a href = "{{ url_for('ingreso_trabajador') }}"> TRABAJADOR </a></BUTton> </Br>
+        <BUTton><a href = "{{ url_for('ingreso_administrativo') }}"> ADMINISTRATIVO </a></BUTton>
+        </div>
+    </div>
+
+{%endblock%}
