@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}Informe de Horas Trabajadas{% endblock %}
+
+{% block content %}
+    <h1>Informe de Horas Trabajadas</h1>
+    <hr />
+
+    {% if informe %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Apellido</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Hora de Entrada</th>
+                    <th>Hora de Salida</th>
+                    <th>Horas Trabajadas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for registro in informe %}
+                    <tr>
+                        <td>{{ registro.trabajador.apellido }}</td>
+                        <td>{{ registro.trabajador.nombre }}</td>
+                        <td>{{ registro.fecha.strftime('%d-%m-%Y') }}</td>
+                        <td>{{ registro.horaEntrada.strftime('%H:%M:%S') }}</td>
+                        <td>{{ registro.horaSalida.strftime('%H:%M:%S') }}</td>
+                        <td>
+                            {% set entrada = registro.horaEntrada.hour + registro.horaEntrada.minute / 60 %}
+                            {% set salida = registro.horaSalida.hour + registro.horaSalida.minute / 60 %}
+                            {{ "%.2f"|format(salida - entrada) }} horas
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No se encontraron registros en el período seleccionado.</p>
+    {% endif %}
+{% endblock %}

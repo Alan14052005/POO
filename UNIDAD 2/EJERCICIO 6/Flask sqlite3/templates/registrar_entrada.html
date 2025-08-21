@@ -1,0 +1,25 @@
+{%extends "layout.html" %}
+{%block title%}formulario de entrada{%endblock%}
+{% block content %}
+
+    <h1>Registrar Entrada</h1>
+    <hr />
+    <form action="{{ request.path }}" method="post" class="container">
+
+        <label for="legajo">Ingrese el Legajo</label><br />
+        <input type="text" name="legajo" placeholder="legajo" required maxlength="4"/><br />
+
+        <label for="dni">Ingrese los ultimos 4 digitos del DNI</label><br />
+        <input type="text" name="dni" placeholder="DNI" required maxlength="4"/><br />
+
+        <label for="dependencia">Dependencia:</label><br />
+        <select name="dependencia" id="dependencia" required>
+            <option value="D01">Edificio Central (Do1)</option>
+            <option value="D02">Talleres (Do2)</option>
+            <option value="D03">Centro Deportivo (Do3)</option>
+        </select>
+
+        <br />
+        <input type="submit" value="Registrar" />
+    </form>
+{%endblock%}

@@ -1,0 +1,25 @@
+{%extends "layout.html" %}
+{%block title%}consultar registro{%endblock%}
+{% block content %}
+
+    <h1>Consultar Registros</h1>
+    <hr />
+    <form action="{{ request.path }}" method="post" class="container">
+
+        <label for="legajo">Ingrese el Legajo</label><br />
+        <input type="text" name="legajo" placeholder="legajo" required maxlength="4"/><br />
+
+        <label for="dni">Ingrese los ultimos 4 digitos del DNI</label><br />
+        <input type="text" name="dni" placeholder="DNI" required maxlength="4"/><br />
+
+        <label for="fecha_inicio">Fecha de inicio</label><br />
+        <input type="date" name="fecha_inicio" required/><br />
+
+        <label for="fecha_fin">Fecha de fin</label><br />
+        <input type="date" name="fecha_fin" required/><br />
+
+        <br />
+        <input type="submit" value="Consultar" />
+    </form>
+
+{%endblock%}

@@ -1,0 +1,15 @@
+{%extends "layout.html" %}
+{%block title%}Ingreso Trabajador{%endblock%}
+{% block content %}
+
+
+        <div class="container">
+        <div class="buttons">
+            <H1>REGISTRO TRABAJADORES</H1>
+        <BUTton><a href = "{{ url_for('registrar_entrada') }}"> REGISTRAR ENTRADA </a></BUTton> </Br>
+        <BUTton><a href = "{{ url_for('registrar_salida') }}"> REGISTRAR SALIDA </a></BUTton></Br>
+        <BUTton><a href = "{{ url_for('consultar_registros') }}"> CONSULTAR REGISTROS </a></BUTton>
+        </div>
+    </div>
+
+{%endblock%}

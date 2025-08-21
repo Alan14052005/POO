@@ -1,0 +1,20 @@
+{%extends "layout.html" %}
+{%block title%}formulario de salida{%endblock%}
+{% block content %}
+
+    <h1>Registrar Salida</h1>
+    <hr />
+    <form action="{{ request.path }}" method="post" class="container">
+
+        <label for="legajo">Ingrese el Legajo</label><br />
+        <input type="text" name="legajo" placeholder="legajo" required maxlength="4"/><br />
+
+        <label for="dni">Ingrese los ultimos 4 digitos del DNI</label><br />
+        <input type="text" name="dni" placeholder="DNI" required maxlength="4"/><br />
+
+
+        <br />
+        <input type="submit" value="Registrar Salida" />
+    </form>
+
+{%endblock%}
